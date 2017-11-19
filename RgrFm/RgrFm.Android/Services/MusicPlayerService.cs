@@ -27,7 +27,7 @@ namespace RgrFm.Droid.Services
             return StartCommandResult.Sticky;
         }
 
-        public void Play()
+        public  void Play()
         {
             MediaPlayer = new MediaPlayer();
             MediaPlayer.SetAudioStreamType(Stream.Music);
