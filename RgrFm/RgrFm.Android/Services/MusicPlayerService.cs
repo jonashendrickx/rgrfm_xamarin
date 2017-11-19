@@ -1,9 +1,12 @@
-﻿using Android.App;
+﻿using System;
+using Android.App;
 using Android.Content;
 using Android.Media;
 using Android.OS;
 using Android.Support.V4.Content;
+using Android.Telephony;
 using Java.Lang;
+using RgrFm.Droid.Common;
 
 namespace RgrFm.Droid.Services
 {
@@ -18,8 +21,16 @@ namespace RgrFm.Droid.Services
 
         public override void OnCreate()
         {
+            PhoneCallStateListener phoneStateListener = new PhoneCallStateListener(this);
+            TelephonyManager telephonyManager = (TelephonyManager)GetSystemService(TelephonyService);
+            telephonyManager.Listen(phoneStateListener, PhoneStateListenerFlags.CallState);
             _intent = new Intent(ApplicationContext, typeof(MainActivity));
             _intent.SetFlags(ActivityFlags.ClearTop | ActivityFlags.SingleTop);
+        }
+
+        private object OnCallStateChanged(object state, object incomingNumber)
+        {
+            throw new NotImplementedException();
         }
 
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
@@ -36,6 +47,13 @@ namespace RgrFm.Droid.Services
             MediaPlayer.SetOnPreparedListener(this);
             MediaPlayer.SetDataSource("http://stream.intronic.nl/rgrfm");
             MediaPlayer.Prepare();
+        }
+
+        public void StopReceivingCall()
+        {
+            Intent intent = new Intent(PhoneCallStateListener.CallStateRinging);
+            LocalBroadcastManager.GetInstance(ApplicationContext).SendBroadcast(intent);
+            Stop();
         }
 
         public void Stop()

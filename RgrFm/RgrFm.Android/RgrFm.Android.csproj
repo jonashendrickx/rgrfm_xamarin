@@ -85,6 +85,7 @@
     <Compile Include="Background\IPlaylistUpdaterTaskListener.cs" />
     <Compile Include="Background\PlaylistUpdaterTask.cs" />
     <Compile Include="Common\Connectivity.cs" />
+    <Compile Include="Common\PhoneCallStateListener.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

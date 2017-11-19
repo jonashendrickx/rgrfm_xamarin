@@ -22,7 +22,7 @@ namespace RgrFm.Droid
         private bool _isBound;
         private MusicPlayerService _musicPlayerService;
 
-        private readonly MusicPlayerBroadCastReceiver _broadcastReceiver = new MusicPlayerBroadCastReceiver();
+        private MusicPlayerBroadCastReceiver _broadcastReceiver = new MusicPlayerBroadCastReceiver();
 
         private ImageButton _btnPlay;
         private TextView _textViewSong1;
@@ -77,6 +77,7 @@ namespace RgrFm.Droid
         protected override void OnResume()
         {
             base.OnResume();
+            _broadcastReceiver._activity = this;
             StartPlaylistRefresh();
         }
 
