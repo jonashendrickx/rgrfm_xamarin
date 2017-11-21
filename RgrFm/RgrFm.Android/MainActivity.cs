@@ -90,7 +90,7 @@ namespace RgrFm.Droid
         private void InitServiceListener()
         {
             var intentFilter = new IntentFilter();
-            intentFilter.AddAction(MusicPlayerService.PlayerError);
+            intentFilter.AddAction(MusicPlayerService.PlayerStop);
             LocalBroadcastManager.GetInstance(this).RegisterReceiver(_broadcastReceiver, intentFilter);
         }
 

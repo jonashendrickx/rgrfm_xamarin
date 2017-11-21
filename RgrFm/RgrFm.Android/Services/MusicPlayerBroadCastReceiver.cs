@@ -21,7 +21,7 @@ namespace RgrFm.Droid.Services
 
         public override void OnReceive(Context context, Intent intent)
         {
-            if (intent.Action.Equals(MusicPlayerService.PlayerError) || intent.Action.Equals(PhoneCallStateListener.CallStateRinging))
+            if (intent.Action.Equals(MusicPlayerService.PlayerStop))
             {
                 _activity.RunOnUiThread(() =>
                 {

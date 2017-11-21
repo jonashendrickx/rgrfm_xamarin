@@ -5,7 +5,6 @@ namespace RgrFm.Droid.Common
 {
     public class PhoneCallStateListener : PhoneStateListener
     {
-        public static readonly string CallStateRinging = "com.jonashendrickx.rgrfm.CallStateRinging";
         private MusicPlayerService _service;
         public PhoneCallStateListener(MusicPlayerService service)
         {

@@ -15,7 +15,8 @@ namespace RgrFm.Droid.Services
     {
         private IBinder _binder;
         private Intent _intent;
-        public static readonly string PlayerError = "com.jonashendrickx.rgrfm.PlayerError";
+        public static readonly string PlayerStop = "com.jonashendrickx.rgrfm.PlayerStop";
+
 
         public MediaPlayer MediaPlayer { get; private set; }
 
@@ -51,7 +52,7 @@ namespace RgrFm.Droid.Services
 
         public void StopReceivingCall()
         {
-            Intent intent = new Intent(PhoneCallStateListener.CallStateRinging);
+            Intent intent = new Intent(PlayerStop);
             LocalBroadcastManager.GetInstance(ApplicationContext).SendBroadcast(intent);
             Stop();
         }
@@ -117,7 +118,7 @@ namespace RgrFm.Droid.Services
 
         private void HandleError()
         {
-            Intent intent = new Intent(PlayerError);
+            Intent intent = new Intent(PlayerStop);
             LocalBroadcastManager.GetInstance(ApplicationContext).SendBroadcast(intent);
             Stop();
         }
