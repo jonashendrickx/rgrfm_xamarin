@@ -23,8 +23,11 @@ namespace RgrFm.Droid.Services
         {
             if (intent.Action.Equals(MusicPlayerService.PlayerError) || intent.Action.Equals(PhoneCallStateListener.CallStateRinging))
             {
-                var button = _activity.FindViewById<ImageButton>(Resource.Id.playButton);
-                button.SetImageResource(Resource.Drawable.ic_play_circle_outline_white_48dp);
+                _activity.RunOnUiThread(() =>
+                {
+                    var button = _activity.FindViewById<ImageButton>(Resource.Id.playButton);
+                    button.SetImageResource(Resource.Drawable.ic_play_circle_outline_white_48dp);
+                });
             }
         }
     }
