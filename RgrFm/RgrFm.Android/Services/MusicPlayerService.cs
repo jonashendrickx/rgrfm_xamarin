@@ -111,6 +111,10 @@ namespace RgrFm.Droid.Services
                     }
                 }
                 return true;
+            } else if ((int) what == 973)
+            {
+                Play();
+                return true;
             }
             return false;
         }
