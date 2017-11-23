@@ -41,6 +41,50 @@ namespace RgrFm.Droid
 			}
 		}
 		
+		public partial class Color
+		{
+			
+			// aapt resource value: 0x7f040001
+			public const int rgrfm_blue = 2130968577;
+			
+			// aapt resource value: 0x7f040000
+			public const int rgrfm_dark_blue = 2130968576;
+			
+			// aapt resource value: 0x7f040002
+			public const int rgrfm_light_green = 2130968578;
+			
+			static Color()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Color()
+			{
+			}
+		}
+		
+		public partial class Dimension
+		{
+			
+			// aapt resource value: 0x7f050001
+			public const int activity_margin = 2131034113;
+			
+			// aapt resource value: 0x7f050002
+			public const int playButton_size = 2131034114;
+			
+			// aapt resource value: 0x7f050000
+			public const int playlist_textSize = 2131034112;
+			
+			static Dimension()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Dimension()
+			{
+			}
+		}
+		
 		public partial class Drawable
 		{
 			
@@ -72,17 +116,17 @@ namespace RgrFm.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int playButton = 2131034112;
+			// aapt resource value: 0x7f070000
+			public const int playButton = 2131165184;
 			
-			// aapt resource value: 0x7f050001
-			public const int textViewSong1 = 2131034113;
+			// aapt resource value: 0x7f070001
+			public const int textViewSong1 = 2131165185;
 			
-			// aapt resource value: 0x7f050002
-			public const int textViewSong2 = 2131034114;
+			// aapt resource value: 0x7f070002
+			public const int textViewSong2 = 2131165186;
 			
-			// aapt resource value: 0x7f050003
-			public const int textViewSong3 = 2131034115;
+			// aapt resource value: 0x7f070003
+			public const int textViewSong3 = 2131165187;
 			
 			static Id()
 			{
@@ -113,11 +157,11 @@ namespace RgrFm.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int app_name = 2130968577;
+			// aapt resource value: 0x7f060001
+			public const int app_name = 2131099649;
 			
-			// aapt resource value: 0x7f040000
-			public const int hello = 2130968576;
+			// aapt resource value: 0x7f060000
+			public const int hello = 2131099648;
 			
 			static String()
 			{

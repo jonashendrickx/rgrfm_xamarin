@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-  <ImageButton
-    android:id="@+id/playButton"
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content"
-    android:src="@drawable/ic_play_circle_outline_white_48dp"
-    android:layout_alignParentBottom="true"
-    android:layout_centerInParent="true"
-    android:background="@android:color/transparent" />
+    android:background="@color/rgrfm_dark_blue"
+    android:layout_height="fill_parent"
+    android:padding="@dimen/activity_margin"
+    android:layout_width="fill_parent">
+    <ImageButton
+        android:id="@+id/playButton"
+        android:layout_height="@dimen/playButton_size"
+        android:layout_width="@dimen/playButton_size"
+        android:src="@drawable/ic_play_circle_outline_white_48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:background="@android:color/transparent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
@@ -21,21 +25,27 @@
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            style="@android:style/TextAppearance.Large"
-            android:gravity="center" />
+            android:textSize="@dimen/playlist_textSize"
+            android:text="Dutch Master - Fly Like A Rocket"
+            android:gravity="center"
+            android:textColor="@color/rgrfm_light_green" />
         <TextView
             android:id="@+id/textViewSong2"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            style="@android:style/TextAppearance.Large"
-            android:gravity="center" />
+            android:textSize="@dimen/playlist_textSize"
+            android:text="Dutch Master - Fly Like A Rocket"
+            android:gravity="center"
+            android:textColor="@color/rgrfm_light_green" />
         <TextView
             android:id="@+id/textViewSong3"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            style="@android:style/TextAppearance.Large"
-            android:gravity="center" />
+            android:textSize="@dimen/playlist_textSize"
+            android:text="Dutch Master - Fly Like A Rocket"
+            android:gravity="center"
+            android:textColor="@color/rgrfm_light_green" />
     </LinearLayout>
 </RelativeLayout>
