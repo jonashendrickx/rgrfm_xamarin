@@ -92,8 +92,6 @@ namespace RgrFm.Droid.Services
 
         public bool OnInfo(MediaPlayer mp, MediaInfo what, int extra)
         {
-            
-
             if ((int)what == 703 && extra == 0)
             {
                 if (MediaPlayer == null)
@@ -102,15 +100,20 @@ namespace RgrFm.Droid.Services
                 }
                 else
                 {
-                    if (!MediaPlayer.IsPlaying)
+                    if (MediaPlayer.IsPlaying)
                     {
-                        Play();
+                        if (!Connectivity.IsConnected(ApplicationContext))
+                            HandleError();
                     }
                     else
                     {
-                        HandleError();
+                        Play();
                     }
                 }
+                return true;
+            } else if ((int) what == 973)
+            {
+                Play();
                 return true;
             }
             return false;
