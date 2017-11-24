@@ -26,7 +26,6 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:textSize="@dimen/playlist_textSize"
-            android:text="Dutch Master - Fly Like A Rocket"
             android:gravity="center"
             android:textColor="@color/rgrfm_light_green" />
         <TextView
@@ -35,7 +34,6 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:textSize="@dimen/playlist_textSize"
-            android:text="Dutch Master - Fly Like A Rocket"
             android:gravity="center"
             android:textColor="@color/rgrfm_light_green" />
         <TextView
@@ -44,7 +42,6 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:textSize="@dimen/playlist_textSize"
-            android:text="Dutch Master - Fly Like A Rocket"
             android:gravity="center"
             android:textColor="@color/rgrfm_light_green" />
     </LinearLayout>

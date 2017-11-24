@@ -122,7 +122,6 @@ namespace RgrFm.Droid
         public void OnServiceConnected(ComponentName name, IBinder service)
         {
             _musicPlayerService = ((MusicPlayerService.MusicPlayerServiceBinder)service).GetService();
-            Console.WriteLine(_musicPlayerService.ToString());
         }
 
         public void OnServiceDisconnected(ComponentName name)
