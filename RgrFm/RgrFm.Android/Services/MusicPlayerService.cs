@@ -7,6 +7,7 @@ using Android.Support.V4.Content;
 using Android.Telephony;
 using Java.Lang;
 using RgrFm.Droid.Common;
+using System.Threading.Tasks;
 
 namespace RgrFm.Droid.Services
 {
@@ -39,7 +40,7 @@ namespace RgrFm.Droid.Services
             return StartCommandResult.Sticky;
         }
 
-        public  void Play()
+        public void Play()
         {
             MediaPlayer = new MediaPlayer();
             MediaPlayer.SetAudioStreamType(Stream.Music);
@@ -47,7 +48,7 @@ namespace RgrFm.Droid.Services
             MediaPlayer.SetOnInfoListener(this);
             MediaPlayer.SetOnPreparedListener(this);
             MediaPlayer.SetDataSource("http://stream.intronic.nl/rgrfm");
-            MediaPlayer.Prepare();
+            MediaPlayer.PrepareAsync();
         }
 
         public void StopReceivingCall()
