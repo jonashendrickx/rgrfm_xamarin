@@ -26,7 +26,7 @@
             android:adjustViewBounds="true"
             android:id="@+id/logoImageView"
             android:src="@drawable/rgr_logo"
-            android:layout_weight="0.5" />
+            android:layout_weight="0.75" />
         <TextView
             android:id="@+id/textViewSong1"
             android:layout_width="match_parent"
