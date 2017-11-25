@@ -89,19 +89,25 @@ namespace RgrFm.Droid
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int ic_pause_circle_filled_white_48dp = 2130837504;
+			public const int header = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int ic_pause_circle_outline_white_48dp = 2130837505;
+			public const int ic_pause_circle_filled_white_48dp = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int ic_play_circle_filled_white_48dp = 2130837506;
+			public const int ic_pause_circle_outline_white_48dp = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int ic_play_circle_outline_white_48dp = 2130837507;
+			public const int ic_play_circle_filled_white_48dp = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int Icon = 2130837508;
+			public const int ic_play_circle_outline_white_48dp = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int Icon = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int rgr_logo = 2130837510;
 			
 			static Drawable()
 			{
@@ -116,17 +122,20 @@ namespace RgrFm.Droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f070001
+			public const int logoImageView = 2131165185;
+			
 			// aapt resource value: 0x7f070000
 			public const int playButton = 2131165184;
 			
-			// aapt resource value: 0x7f070001
-			public const int textViewSong1 = 2131165185;
-			
 			// aapt resource value: 0x7f070002
-			public const int textViewSong2 = 2131165186;
+			public const int textViewSong1 = 2131165186;
 			
 			// aapt resource value: 0x7f070003
-			public const int textViewSong3 = 2131165187;
+			public const int textViewSong2 = 2131165187;
+			
+			// aapt resource value: 0x7f070004
+			public const int textViewSong3 = 2131165188;
 			
 			static Id()
 			{
