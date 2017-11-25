@@ -15,7 +15,7 @@ using System.Timers;
 
 namespace RgrFm.Droid
 {
-    [Activity(Label = "RgrFm.Android", MainLauncher = true, Icon = "@drawable/icon", ConfigurationChanges = ConfigChanges.KeyboardHidden | ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
+    [Activity(Label = "RGR FM", MainLauncher = true, Icon = "@drawable/icon", ConfigurationChanges = ConfigChanges.KeyboardHidden | ConfigChanges.Orientation | ConfigChanges.ScreenSize)]
     public class MainActivity : Activity, IServiceConnection, View.IOnClickListener
     {
         private Timer _timer;
