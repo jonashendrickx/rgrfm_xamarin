@@ -26,7 +26,7 @@ namespace RgrFm.Droid.Services
                 _activity.RunOnUiThread(() =>
                 {
                     var button = _activity.FindViewById<ImageButton>(Resource.Id.playButton);
-                    button.SetImageResource(Resource.Drawable.ic_play_circle_outline_white_48dp);
+                    button.SetImageResource(Resource.Drawable.ic_play_circle_outline_dark_blue_48dp);
                 });
             }
         }

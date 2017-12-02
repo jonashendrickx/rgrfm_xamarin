@@ -50,11 +50,11 @@ namespace RgrFm.Droid
             {
                 if (_musicPlayerService.MediaPlayer == null)
                 {
-                    _btnPlay.SetImageResource(Resource.Drawable.ic_play_circle_filled_white_48dp);
+                    _btnPlay.SetImageResource(Resource.Drawable.ic_play_circle_filled_dark_blue_48dp);
                 }
                 else if (_musicPlayerService.MediaPlayer != null)
                 {
-                    _btnPlay.SetImageResource(Resource.Drawable.ic_pause_circle_outline_white_48dp);
+                    _btnPlay.SetImageResource(Resource.Drawable.ic_pause_circle_outline_dark_blue_48dp);
                 }
             }
         }
@@ -135,12 +135,12 @@ namespace RgrFm.Droid
             {
                 if (_musicPlayerService.MediaPlayer == null && Connectivity.IsConnected(ApplicationContext))
                 {
-                    _btnPlay.SetImageResource(Resource.Drawable.ic_pause_circle_outline_white_48dp);
+                    _btnPlay.SetImageResource(Resource.Drawable.ic_pause_circle_outline_dark_blue_48dp);
                     _musicPlayerService.Play();
                 }
                 else if (_musicPlayerService.MediaPlayer != null)
                 {
-                    _btnPlay.SetImageResource(Resource.Drawable.ic_play_circle_outline_white_48dp);
+                    _btnPlay.SetImageResource(Resource.Drawable.ic_play_circle_outline_dark_blue_48dp);
                     _musicPlayerService.Stop();
                 }
             }
