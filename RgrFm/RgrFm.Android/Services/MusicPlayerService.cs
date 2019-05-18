@@ -1,5 +1,4 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.Media;
 using Android.OS;
@@ -7,7 +6,6 @@ using Android.Support.V4.Content;
 using Android.Telephony;
 using Java.Lang;
 using RgrFm.Droid.Common;
-using System.Threading.Tasks;
 
 namespace RgrFm.Droid.Services
 {
@@ -30,11 +28,6 @@ namespace RgrFm.Droid.Services
             _intent.SetFlags(ActivityFlags.ClearTop | ActivityFlags.SingleTop);
         }
 
-        private object OnCallStateChanged(object state, object incomingNumber)
-        {
-            throw new NotImplementedException();
-        }
-
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
             return StartCommandResult.Sticky;
@@ -43,7 +36,10 @@ namespace RgrFm.Droid.Services
         public void Play()
         {
             MediaPlayer = new MediaPlayer();
-            MediaPlayer.SetAudioStreamType(Stream.Music);
+            var attributesBuilder = new AudioAttributes.Builder();
+            attributesBuilder.SetLegacyStreamType(Stream.Music);
+            attributesBuilder.SetContentType(AudioContentType.Music);
+            MediaPlayer.SetAudioAttributes(attributesBuilder.Build());
             MediaPlayer.SetOnErrorListener(this);
             MediaPlayer.SetOnInfoListener(this);
             MediaPlayer.SetOnPreparedListener(this);
@@ -56,27 +52,6 @@ namespace RgrFm.Droid.Services
             Intent intent = new Intent(PlayerStop);
             LocalBroadcastManager.GetInstance(ApplicationContext).SendBroadcast(intent);
             Stop();
-        }
-
-        public void Stop()
-        {
-            if (MediaPlayer != null)
-            {
-                try
-                {
-                    MediaPlayer.Stop();
-                }
-                catch (IllegalStateException)
-                {
-
-                }
-                finally
-                {
-                    MediaPlayer.Release();
-                    MediaPlayer = null;
-                }
-            }
-            StopForeground(true);
         }
 
         public override IBinder OnBind(Intent intent)
@@ -127,6 +102,27 @@ namespace RgrFm.Droid.Services
         {
             MediaPlayer.Start();
         }
+
+        public void Stop()
+        {
+            if (MediaPlayer != null)
+            {
+                try
+                {
+                    MediaPlayer.Stop();
+                }
+                catch (IllegalStateException)
+                {
+
+                }
+                finally
+                {
+                    MediaPlayer.Release();
+                    MediaPlayer = null;
+                }
+            }
+        }
+
 
         public class MusicPlayerServiceBinder : Binder
         {

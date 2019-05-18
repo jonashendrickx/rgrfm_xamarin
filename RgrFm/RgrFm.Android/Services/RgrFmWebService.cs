@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using RgrFm.Models;
+using RgrFm.Services;
 
 namespace RgrFm.Droid.Services
 {
@@ -12,21 +13,22 @@ namespace RgrFm.Droid.Services
         {
             try
             {
-                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(new Uri("http://www.rgrfm.be/rgrsite/maxradio/android_json.php"));
-                request.ContentType = "application/json";
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(new Uri("https://www.rgrfm.be/rgr_dance/apps/playlist.php"));
+                request.ContentType = "application/xhtml+xml";
                 request.Method = "GET";
 
                 using (var response = await request.GetResponseAsync())
                 {
-                    using (Stream stream = response.GetResponseStream())
+                    using (var stream = response.GetResponseStream())
                     {
-                        string jsonString;
-                        using (StreamReader reader = new StreamReader(stream))
+                        string content;
+                        using (var reader = new StreamReader(stream))
                         {
-                            jsonString = reader.ReadToEnd();
+                            content = reader.ReadToEnd();
                         }
-                        var result = Newtonsoft.Json.JsonConvert.DeserializeObject<PlaylistFeed>(jsonString);
-                        return result;
+
+                        var result = XmlSerializerService.Deserialize(content);
+                        return PlaylistFeed.FromXmlContract(result);
                     }
                 }
             }

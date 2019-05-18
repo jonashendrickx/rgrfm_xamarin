@@ -63,7 +63,7 @@ namespace RgrFm.Droid
         {
             base.OnDestroy();
 
-            _musicPlayerService?.Stop();
+            _musicPlayerService?.StopSelf();
 
             DoUnbindService();
         }
@@ -77,7 +77,7 @@ namespace RgrFm.Droid
         protected override void OnResume()
         {
             base.OnResume();
-            _broadcastReceiver._activity = this;
+            _broadcastReceiver.Activity = this;
             StartPlaylistRefresh();
         }
 
@@ -113,7 +113,7 @@ namespace RgrFm.Droid
         private async Task OnTimedEvent(object sender, ElapsedEventArgs e)
         {
             if (_timer != null) _timer.Interval = 60000;
-            PlaylistUpdaterTask task = new PlaylistUpdaterTask();
+            var task = new PlaylistUpdaterTask();
             task.Execute();
             var result = await task.GetResult();
             OnTaskComplete(result);
@@ -133,12 +133,14 @@ namespace RgrFm.Droid
         {
             if (v.Equals(_btnPlay))
             {
-                if (_musicPlayerService.MediaPlayer == null && Connectivity.IsConnected(ApplicationContext))
+                if (_musicPlayerService?.MediaPlayer == null && Connectivity.IsConnected(ApplicationContext))
                 {
                     _btnPlay.SetImageResource(Resource.Drawable.ic_pause_circle_outline_dark_blue_48dp);
+                    Intent intent = new Intent(this, typeof(MusicPlayerService));
+                    _musicPlayerService.StartService(intent);
                     _musicPlayerService.Play();
                 }
-                else if (_musicPlayerService.MediaPlayer != null)
+                else if (_musicPlayerService?.MediaPlayer != null)
                 {
                     _btnPlay.SetImageResource(Resource.Drawable.ic_play_circle_outline_dark_blue_48dp);
                     _musicPlayerService.Stop();
