@@ -15,7 +15,7 @@ using System.Timers;
 
 namespace RgrFm.Droid
 {
-    [Activity(Label = "RGR FM", MainLauncher = true, Icon = "@drawable/icon", ConfigurationChanges = ConfigChanges.KeyboardHidden | ConfigChanges.Orientation | ConfigChanges.ScreenSize, Theme = "@android:style/Theme.Holo.NoActionBar.Fullscreen")]
+    [Activity(Label = "RGR FM", MainLauncher = true, Icon = "@drawable/ic_launcher", ConfigurationChanges = ConfigChanges.KeyboardHidden | ConfigChanges.Orientation | ConfigChanges.ScreenSize, Theme = "@android:style/Theme.Holo.NoActionBar.Fullscreen")]
     public class MainActivity : Activity, IServiceConnection, View.IOnClickListener
     {
         private Timer _timer;
